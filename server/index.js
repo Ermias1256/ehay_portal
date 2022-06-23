@@ -17,9 +17,6 @@ app.use("/user", userRoutes);
 
 app.use("/userlogs", userLogRoutes);
 
-// settings
-app.use("/approutesettings", appRouteSettingRoutes);
-
 const PORT = process.env.PORT || 5000;
 
 mongoose
