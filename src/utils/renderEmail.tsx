@@ -1,6 +1,6 @@
 import React, { ComponentType } from "react";
 import { renderEmail } from "react-html-email";
-import { SignupWelcome } from "../components/templates/SignupWelcome";
+import { SignupWelcome } from "../components/templates/SignupWelcome.tsx";
 
 type Props = {
   subject: string;

@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux";
 // import signinImage from "../../public/img/signup.jpg";
 import Cookies from "universal-cookie";
 
-// import { renderSignupWelcomeEmail } from "../../utils/renderEmail";
+import { renderSignupWelcomeEmail } from "../../utils/renderEmail.tsx";
 
 import Icon from "./icon";
 
@@ -59,12 +59,12 @@ const Auth = () => {
       const userToken = data?.token;
       if (data?.result) {
         if (!data?.result?.emailVerified) {
-          // send account activation email
-          // sendActivationEmail(
-          //   data?.result?.email,
-          //   data?.result?.name,
-          //   data?.result?.verificationCode
-          // );
+          //  send account activation email
+          sendActivationEmail(
+            data?.result?.email,
+            data?.result?.name,
+            data?.result?.verificationCode
+          );
 
           // prompt text box for entering activation code
           setIsVerification(true);
@@ -79,27 +79,27 @@ const Auth = () => {
     }
   };
 
-  // const sendActivationEmail = (email, name, verificationCode) => {
-  //   // generate html from react component
-  //   const to = email;
-  //   const subject = "Welcome to eHay portal!";
+  const sendActivationEmail = (email, name, verificationCode) => {
+    // generate html from react component
+    const to = email;
+    const subject = "Welcome to eHay portal!";
 
-  //   const htmlContent = renderSignupWelcomeEmail({
-  //     subject: subject,
-  //     userName: name,
-  //     activationCode: verificationCode,
-  //   });
+    const htmlContent = renderSignupWelcomeEmail({
+      subject: subject,
+      userName: name,
+      activationCode: verificationCode,
+    });
 
-  //   // construct email params
-  //   const emailParams = {
-  //     to: to,
-  //     subject: subject,
-  //     textHTML: htmlContent,
-  //   };
+    // construct email params
+    const emailParams = {
+      to: to,
+      subject: subject,
+      textHTML: htmlContent,
+    };
 
-  //   // send account activation code by email
-  //   dispatch(signupWelcome(emailParams));
-  // };
+    // send account activation code by email
+    dispatch(signupWelcome(emailParams));
+  };
 
   const handleVerify = (e) => {
     e.preventDefault();
