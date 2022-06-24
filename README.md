@@ -11,7 +11,7 @@
 ## Login
 
 - [x] Normal login
-  - [] Validation
+  - [ ] Validation
   - [x] Navbar toggle - login | user name
   -
-- [] Google login
+- [ ] Google login
