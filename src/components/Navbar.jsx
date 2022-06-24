@@ -1,5 +1,7 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+
 import { AiOutlineMenu } from "react-icons/ai";
 import { FiShoppingCart } from "react-icons/fi";
 import { BsChatLeft } from "react-icons/bs";
@@ -41,13 +43,24 @@ const Navbar = () => {
     setScreenSize,
     screenSize,
   } = useStateContext();
-  const authToken = cookies.get("token");
+
+  //const userName = cookies.get("name");
+
+  const { authData } = useSelector((state) => state.auth);
+
+  //const authToken = cookies.get("token");
+
+  const user = JSON.parse(localStorage.getItem("profile"));
+
+  const authToken = user?.token;
+  const userName = user?.result?.name;
+
+  console.log({ user });
+  console.log({ authToken });
 
   useEffect(() => {
     const handleResize = () => setScreenSize(window.innerWidth);
-
     window.addEventListener("resize", handleResize);
-
     handleResize();
 
     return () => window.removeEventListener("resize", handleResize);
@@ -110,7 +123,7 @@ const Navbar = () => {
               <p>
                 <span className="text-gray-400 text-14">Hi,</span>{" "}
                 <span className="text-gray-400 font-bold ml-1 text-14">
-                  Amu
+                  {userName}
                 </span>
               </p>
               <MdKeyboardArrowDown className="text-gray-400 text-14" />

@@ -1,6 +1,7 @@
 import axios from "axios";
+const ENDPOINT_BASE_URL = "http://localhost:5000";
 
-const API = axios.create({ baseURL: process.env.ENDPOINT_BASE_URL });
+const API = axios.create({ baseURL: ENDPOINT_BASE_URL });
 
 API.interceptors.request.use((req) => {
   if (localStorage.getItem("profile")) {

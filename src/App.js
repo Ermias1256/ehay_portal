@@ -1,5 +1,7 @@
-import React, { useContext, useEffect } from "react";
+import React from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+
 import { FiSettings } from "react-icons/fi";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 
@@ -37,7 +39,13 @@ import Cookies from "universal-cookie";
 
 const cookies = new Cookies();
 const App = () => {
-  const authToken = cookies.get("token");
+  const { authData } = useSelector((state) => state.auth);
+
+  // const authToken = cookies.get("token");
+
+  const user = JSON.parse(localStorage.getItem("profile"));
+
+  const authToken = user?.token;
 
   const {
     activeMenu,

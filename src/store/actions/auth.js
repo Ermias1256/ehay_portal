@@ -10,7 +10,7 @@ export const getUsers = (page) => async (dispatch) => {
   try {
     dispatch({ type: START_LOADING });
     const { data } = await api.fetchUsers(page);
-    console.log(data);
+
     dispatch({ type: FETCH_ALL_USERS, payload: data });
 
     dispatch({ type: END_LOADING });
@@ -21,12 +21,12 @@ export const getUsers = (page) => async (dispatch) => {
 
 export const signin = (formData, navigate, from) => async (dispatch) => {
   try {
-    console.log({ formData });
+    dispatch({ type: START_LOADING });
     const { data } = await api.signIn(formData);
-    console.log({ data });
+
     if (data.result.emailVerified) {
       dispatch({ type: AUTH, data });
-
+      dispatch({ type: END_LOADING });
       navigate(from, { replace: true });
     }
 

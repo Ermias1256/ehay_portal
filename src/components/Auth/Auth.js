@@ -54,7 +54,6 @@ const Auth = () => {
         setIsVerification(true);
       }
     } else {
-      console.log({ authData });
       const data = await dispatch(signin(authData, navigate, fromLocation));
 
       const userToken = data?.token;
