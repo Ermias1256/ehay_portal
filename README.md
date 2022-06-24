@@ -8,7 +8,7 @@
 - _[1.4. User Logs](#user-logs)_
 - _[1.5. User Profile](#user-profile)_
 
-## **[2.eCommerce](#ecommerce)**
+**[2.eCommerce](#ecommerce)**
 
 # Authentication and Authorization
 
