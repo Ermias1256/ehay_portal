@@ -55,9 +55,6 @@ const Navbar = () => {
   const authToken = user?.token;
   const userName = user?.result?.name;
 
-  console.log({ user });
-  console.log({ authToken });
-
   useEffect(() => {
     const handleResize = () => setScreenSize(window.innerWidth);
     window.addEventListener("resize", handleResize);

@@ -100,15 +100,6 @@ export const signup = async (req, res) => {
       emailVerified: false,
     });
 
-    // const token = jwt.sign({ email: result.email, id: result._id }, "test", {
-    //   expiresIn: "1h",
-    // });
-
-    // send email
-    //await sendMailFromOutlook();
-
-    // res.status(200).json({ result, token });
-
     res.status(200).json({ result });
   } catch (error) {
     res.status(500).json({ message: "Something went wrong." });

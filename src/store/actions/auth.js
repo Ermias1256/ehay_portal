@@ -38,14 +38,16 @@ export const signin = (formData, navigate, from) => async (dispatch) => {
 
 export const signup = (formData) => async (dispatch) => {
   try {
+    dispatch({ type: START_LOADING });
     const { data } = await api.signUp(formData);
-
+    dispatch({ type: END_LOADING });
     return data.result;
     //dispatch({ type: AUTH, data });
   } catch (error) {
     console.log(error);
   }
 };
+
 export const signupWelcome = (emailParams) => async (dispatch) => {
   try {
     await api.signupWelcome(emailParams);

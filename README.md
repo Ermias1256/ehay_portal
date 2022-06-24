@@ -4,8 +4,11 @@
 
 - _[1.1. Login and Logout](#login-and-logout)_
 - _[1.2. Signup](#signup)_
+- _[1.3. Role Based Auth](#role-based-auth)_
+- _[1.4. User Logs](#user-logs)_
+- _[1.5. User Profile](#user-profile)_
 
----
+## **[2.eCommerce](#ecommerce)**
 
 # Authentication and Authorization
 
@@ -37,13 +40,36 @@
 
 ## Signup
 
-- [ ] Signup form
-- [ ] Toggle between signup and login
-- [ ] New user registration
+- [x] Signup form display
+- [x] Toggle between signup and login
+- [x] New user registration
 - [ ] Validation of users registration
-- [ ] Security verification via email
+
+  - email unique
+  - pasword and repeat password
+  - all fields are required
+
+- [x] Security verification via email
 
   - Display verification input field
   - Sending email with verification code
   - Verifying user account
   - Verification code expiry date
+
+## Role Based Auth
+
+- [ ] Define roles
+
+  - General User - 1000
+
+  - Merchant - 1001
+
+  - Admin - 2000
+
+- [ ] Grant all users General User - 1000 role
+
+## User Logs
+
+## User Profile
+
+# eCommerce
