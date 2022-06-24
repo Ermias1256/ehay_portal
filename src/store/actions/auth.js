@@ -21,8 +21,9 @@ export const getUsers = (page) => async (dispatch) => {
 
 export const signin = (formData, navigate, from) => async (dispatch) => {
   try {
+    console.log({ formData });
     const { data } = await api.signIn(formData);
-
+    console.log({ data });
     if (data.result.emailVerified) {
       dispatch({ type: AUTH, data });
 

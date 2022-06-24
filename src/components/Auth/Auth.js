@@ -44,16 +44,17 @@ const Auth = () => {
 
       //if user registered send account activation email
       if (userData) {
-        // sendActivationEmail(
-        //   userData.email,
-        //   userData.name,
-        //   userData.verificationCode
-        // );
+        sendActivationEmail(
+          userData.email,
+          userData.name,
+          userData.verificationCode
+        );
 
         // switch to the verification form
         setIsVerification(true);
       }
     } else {
+      console.log({ authData });
       const data = await dispatch(signin(authData, navigate, fromLocation));
 
       const userToken = data?.token;
@@ -164,6 +165,7 @@ const Auth = () => {
                               type="text"
                               className="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                               id="firstName"
+                              name="firstName"
                               placeholder="First Name"
                               onChange={handleChange}
                             />
@@ -173,6 +175,7 @@ const Auth = () => {
                               type="text"
                               className="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                               id="lastName"
+                              name="lastName"
                               placeholder="Last Name"
                               onChange={handleChange}
                             />
@@ -186,6 +189,7 @@ const Auth = () => {
                               type="text"
                               className="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                               id="verificationCode"
+                              name="verificationCode"
                               placeholder="Verification Code(6 digits)"
                               onChange={handleChange}
                             />
@@ -217,6 +221,7 @@ const Auth = () => {
                               type="email"
                               className="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                               id="email"
+                              name="email"
                               placeholder="Email Address"
                               onChange={handleChange}
                             />
@@ -226,6 +231,7 @@ const Auth = () => {
                               type="password"
                               className="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                               id="password"
+                              name="password"
                               placeholder="Password"
                               onChange={handleChange}
                             />
@@ -248,7 +254,6 @@ const Auth = () => {
                         <>
                           <div className="text-center pt-1 mb-4 pb-1">
                             <button
-                              onClick={handleVerify}
                               className="inline-block px-6 py-2.5 text-white bg-blue-400 font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out w-full mb-3"
                               type="submit"
                               data-mdb-ripple="true"
