@@ -10,7 +10,7 @@ const appRouteSettingSchema = mongoose.Schema({
   allowedRoles: {
     // list of role code who allowed to access this feature
     type: [String],
-    default: [],
+    default: [1000],
   },
   enabled: {
     // whether the menu should be visible to the user and functioning
