@@ -4,6 +4,8 @@ import cors from "cors";
 
 import userRoutes from "./routes/users.js";
 import userLogRoutes from "./routes/userLogs.js";
+import lookupSettingRoutes from "./routes/lookupSettings.js";
+import appRouteSettingRoutes from "./routes/appRouteSettings.js";
 
 import dotenv from "dotenv";
 const app = express();
@@ -14,8 +16,9 @@ app.use(express.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
 
 app.use("/user", userRoutes);
-
 app.use("/userlogs", userLogRoutes);
+app.use("/approutesettings", appRouteSettingRoutes);
+app.use("/lookupsettings", lookupSettingRoutes);
 
 const PORT = process.env.PORT || 5000;
 

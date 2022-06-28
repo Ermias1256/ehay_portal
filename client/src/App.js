@@ -36,6 +36,7 @@ import {
 import "./App.css";
 
 import Cookies from "universal-cookie";
+import RequireAuth from "./components/Auth/RequireAuth";
 
 const cookies = new Cookies();
 const App = () => {
@@ -103,20 +104,33 @@ const App = () => {
                 <Route path="/" element={<Ecommerce />} />
                 <Route path="/ecommerce" element={<Ecommerce />} />
 
-                {/* pages */}
-                <Route path="/orders" element={<Orders />} />
-                <Route path="/employees" element={<Employees />} />
-                <Route path="/customers" element={<Customers />} />
+                {/* eCommerce */}
+                <Route element={<RequireAuth allowedRoles={["1002"]} />}>
+                  <Route path="/orders" element={<Orders />} />
+                  <Route path="/employees" element={<Employees />} />
+                  <Route path="/customers" element={<Customers />} />
+                  <Route path="/expenses" element={<Expenses />} />
+                </Route>
 
                 <Route path="/products" element={<Products />} />
-                <Route path="/expenses" element={<Expenses />} />
 
-                {/* Apps */}
+                <Route element={<RequireAuth allowedRoles={["1002"]} />}>
+                  <Route
+                    path="/products/new"
+                    exact
+                    element={
+                      <New inputs={productInputs} title="Add New Product" />
+                    }
+                  />
+                </Route>
+
+                {/* Tools */}
                 <Route path="/kanban" element={<Kanban />} />
                 <Route path="/editor" element={<Editor />} />
                 <Route path="/calendar" element={<Calendar />} />
                 <Route path="/color-picker" element={<ColorPicker />} />
 
+                {/* Info */}
                 <Route path="/travel-advisor" element={<TravelAdvisor />} />
                 <Route path="/crypto" element={<Crypto />} />
                 <Route path="/real-estate" element={<RealEstate />} />
