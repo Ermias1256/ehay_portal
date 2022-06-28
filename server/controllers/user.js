@@ -5,28 +5,6 @@ import User from "../models/user.js";
 import { sendMailFromGmail } from "../utils/mailer.js";
 import randomNumber from "../utils/randomNumber.js";
 
-export const getUsers = async (req, res) => {
-  const { page } = req.query;
-  try {
-    const LIMIT = 5;
-    const startIndex = (Number(page) - 1) * LIMIT;
-    const total = await User.countDocuments({});
-
-    const users = await User.find()
-      .sort({ _id: -1 })
-      .limit(LIMIT)
-      .skip(startIndex);
-
-    res.status(200).json({
-      data: users,
-      currentPage: Number(page),
-      numberOfPages: Math.ceil(total / LIMIT),
-    });
-  } catch (error) {
-    res.status(404).json({ message: error.message });
-  }
-};
-
 export const signin = async (req, res) => {
   const { email, password } = req.body;
 
@@ -155,5 +133,27 @@ export const verifySignup = async (req, res) => {
     res.status(200).json({ result: existingUser, token });
   } catch (error) {
     res.status(409).json({ message: error.message });
+  }
+};
+
+export const getUsers = async (req, res) => {
+  const { page } = req.query;
+  try {
+    const LIMIT = 5;
+    const startIndex = (Number(page) - 1) * LIMIT;
+    const total = await User.countDocuments({});
+
+    const users = await User.find()
+      .sort({ _id: -1 })
+      .limit(LIMIT)
+      .skip(startIndex);
+
+    res.status(200).json({
+      data: users,
+      currentPage: Number(page),
+      numberOfPages: Math.ceil(total / LIMIT),
+    });
+  } catch (error) {
+    res.status(404).json({ message: error.message });
   }
 };
