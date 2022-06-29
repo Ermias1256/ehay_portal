@@ -94,7 +94,23 @@
 
   - Admin - 2000
 
-- [ ] Grant all users General User - 1000 role
+- [x] Grant all users General User - 1000 role
+
+- [ ] Client side authorization
+
+  - check for access right
+
+  - Proceed to the page if access allowed
+
+  - Proceed to login page if user is not authenticated
+
+- [ ] server side authorization
+
+  - middleware - check if user is authenticated
+
+  - controller - fetch records pertaining to authenticated user only
+
+  - json - unauthorized - if user is not authorized to access the end point
 
 ## User Logs
 

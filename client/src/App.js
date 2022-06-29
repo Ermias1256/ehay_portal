@@ -113,7 +113,7 @@ const App = () => {
                 </Route>
 
                 <Route path="/products" element={<Products />} />
-
+{/* 
                 <Route element={<RequireAuth allowedRoles={["1002"]} />}>
                   <Route
                     path="/products/new"
@@ -122,7 +122,7 @@ const App = () => {
                       <New inputs={productInputs} title="Add New Product" />
                     }
                   />
-                </Route>
+                </Route> */}
 
                 {/* Tools */}
                 <Route path="/kanban" element={<Kanban />} />
