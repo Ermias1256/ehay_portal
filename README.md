@@ -96,21 +96,23 @@
 
 - [x] Grant all users General User - 1000 role
 
-- [ ] Client side authorization
+- [ ] authorization
 
   - check for access right
 
-  - Proceed to the page if access allowed
+  - if not user login, open login page
 
-  - Proceed to login page if user is not authenticated
+  - if not user authorized, open unauthorized page
 
-- [ ] server side authorization
+  - if data to be fetched from backend (api call)
 
-  - middleware - check if user is authenticated
+    - middleware - check if user is authenticated
 
-  - controller - fetch records pertaining to authenticated user only
+    - json - unauthorized - if user is not authorized to access the end point
 
-  - json - unauthorized - if user is not authorized to access the end point
+    - controller - fetch records pertaining to authenticated user only
+
+  - open the requested page
 
 ## User Logs
 
