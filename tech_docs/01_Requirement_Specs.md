@@ -32,6 +32,23 @@
     </ol>
    </li>
 
+  <li><a href="#proposed-system"> ➤ Proposed System</a>
+    <ol>
+        <li><a href="#key-features"> ➤ Key Features</a> </li>
+        <li><a href="#functional-requirement"> ➤ Functional Requirement</a> </li>       
+        <li><a href="#non-functional-requirement"> ➤ Non Functional Requirement</a> </li>       
+    </ol>
+   </li>
+
+  <li><a href="#proposed-system"> ➤ System Models</a>
+    <ol>
+        <li><a href="#usecase-diagram"> ➤ Usecase Diagram</a> </li>
+        <li><a href="#class-diagram"> ➤ Class Diagram</a> </li>       
+        <li><a href="#sequence-diagram"> ➤ Sequence Diagram</a> </li>       
+        <li><a href="#client-side-pages-structure"> ➤ Client Side Pages Structure</a> </li>       
+    </ol>
+   </li>
+
   </ol>
 </details>
 
