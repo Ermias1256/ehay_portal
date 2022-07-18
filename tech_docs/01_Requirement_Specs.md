@@ -10,7 +10,7 @@
 
 <h1 align="center"> eHay Portal </h1>
 <h2 align="center"> Requirement Analysis Document </h3>
-<hr/>
+
 </br>
 
 <details open="open">
@@ -18,7 +18,7 @@
   <ol>
     <li><a href="#introduction"> ➤ Intorduction</a>
     <ol>
-        <li><a href="#introduction"> ➤ Justification of theProposed System</a> </li>
+        <li><a href="#introduction"> ➤ Justification of the Proposed System</a> </li>
         <li><a href="#introduction"> ➤ Objective and Success Criteria</a> </li>
         <li><a href="#introduction"> ➤ Scope of the System</a> 
       </li>
