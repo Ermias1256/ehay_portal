@@ -9,8 +9,8 @@
 </p>
 
 <h1 align="center"> eHay Portal </h1>
-<h3 align="center"> Requirement Analysis Document </h3>
-
+<h2 align="center"> Requirement Analysis Document </h3>
+<hr/>
 </br>
 
 <details open="open">
