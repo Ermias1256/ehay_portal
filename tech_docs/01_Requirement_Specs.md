@@ -35,8 +35,8 @@
   <li><a href="#proposed-system"> ➤ Proposed System</a>
     <ol>
         <li><a href="#key-features"> ➤ Key Features</a> </li>
-        <li><a href="#functional-requirement"> ➤ Functional Requirement</a> </li>       
-        <li><a href="#non-functional-requirement"> ➤ Non Functional Requirement</a> </li>       
+        <li><a href="#functional-requirements"> ➤ Functional Requirements</a> </li>       
+        <li><a href="#non-functional-requirements"> ➤ Non Functional Requirements</a> </li>       
     </ol>
    </li>
 
